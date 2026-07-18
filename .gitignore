@@ -1,0 +1,18 @@
+# Spec / working docs — never push these
+docs/
+
+# Android / Gradle build artifacts
+.gradle/
+build/
+app/build/
+captures/
+*.apk
+*.aab
+
+# Local SDK / environment config
+local.properties
+.idea/
+*.iml
+
+# OS cruft
+.DS_Store

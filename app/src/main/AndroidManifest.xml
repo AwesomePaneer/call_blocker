@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+      No <uses-permission> entries.
+      - The screening service is protected by the SYSTEM permission
+        BIND_SCREENING_SERVICE (declared on the <service> below); the app never
+        requests it from the user.
+      - The screening ROLE is obtained at runtime via RoleManager, which is a
+        role grant, not a dangerous runtime permission.
+      - No INTERNET, READ_CONTACTS, READ_CALL_LOG or READ_PHONE_STATE (SPEC §9).
+    -->
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Material.Light">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+          The heart of the app. The Telecom system binds this service on each
+          incoming call, calls onScreenCall(), then tears it down. No always-on
+          component; no boot receiver.
+        -->
+        <service
+            android:name=".PrefixCallScreeningService"
+            android:permission="android.permission.BIND_SCREENING_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.telecom.CallScreeningService" />
+            </intent-filter>
+        </service>
+
+    </application>
+</manifest>

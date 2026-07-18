@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Prefix Call Blocker</string>
+
+    <string name="status_active">Call screening: Active</string>
+    <string name="status_inactive">Call screening: Not active</string>
+    <string name="enable_screening">Enable call screening</string>
+
+    <string name="prefix_hint">Prefix, e.g. +91140</string>
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+
+    <string name="helper_text">Calls starting with these prefixes will be silently rejected (no ring, no notification) but still appear in your call log. Saved contacts are never blocked.</string>
+
+    <string name="prefix_not_added">Enter a valid prefix (it may already exist).</string>
+    <string name="role_denied">Blocking won\'t work until call screening is enabled.</string>
+    <string name="role_unavailable">Call screening isn\'t available on this device.</string>
+</resources>
