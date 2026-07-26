@@ -15,9 +15,23 @@ android {
         versionName = "1.0"
     }
 
+    signingConfigs {
+        // Convenience signing key committed to the repo (release.keystore) so
+        // CI-built release APKs are signed consistently and users can update
+        // across versions without uninstalling. This is NOT a secret production
+        // key — for a sideloaded FOSS utility that trade-off is intentional.
+        create("release") {
+            storeFile = file("release.keystore")
+            storePassword = "callblocker"
+            keyAlias = "callblocker"
+            keyPassword = "callblocker"
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 

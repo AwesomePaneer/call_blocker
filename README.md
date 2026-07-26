@@ -15,6 +15,25 @@ this app only decides whether to reject an incoming call.
 
 ---
 
+## Download and install (prebuilt APK)
+
+The easiest way to install — no building required:
+
+1. Open the [**Releases**](../../releases) page and download the latest
+   `prefix-call-blocker-vX.Y.apk`.
+2. On your Android phone, tap the downloaded APK. The first time, Android asks
+   you to allow the app you're installing *from* (Files / browser) to install
+   unknown apps — allow it, then tap the APK again.
+3. Open **Prefix Call Blocker**, tap **Enable call screening**, and grant the
+   role. The status at the top should read **Call screening: Active**.
+4. Type a prefix (for example `+91140`) and tap **Add**. Done.
+
+> The release APK is signed with a project convenience key (not a secret
+> production key), so it installs by sideloading and updates cleanly across
+> versions. Prefer to build it yourself? See [Build](#build) below.
+
+---
+
 ## How it works
 
 Android has a **call-screening role**. Whichever app holds it receives a
